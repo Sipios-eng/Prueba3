@@ -1,0 +1,49 @@
+
+
+{% extends "base.html" %}
+{%load static%}
+
+{% block cabeceratitulo %}
+
+<title>Contactanos!</title>
+{% endblock %}
+{% block contenido %} 
+        <div class="ordenarformulario">
+                <div class="fondoformulario">
+                    <div class="ordenarformularios">
+                        <form name="formValidation" id="validar" action="valid.html">
+                            <h1>Formulario de contacto</h1>
+                            <div class="form-row">
+                            <div class="col">
+                                <label for="inputname1">Nombre</label>
+                                <input type="text" class="form-control" placeholder="" name="name"  required>
+                            </div>
+                            <div class="col">
+                                <label for="inputname2">Apellido</label>
+                                <input type="text" class="form-control" name="apellido"  placeholder="">
+                            </div>
+                            </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email" required>
+                            </div>
+                            <div class="col">
+                                <label for="inputcelular">Celular</label>
+                                <input type="text" class="form-control"  name="celular" placeholder="">
+                            </div>
+                        </div>
+                        
+                        <div class="comentario">
+                        <h2>Ingrese su comentario</h2>
+                        <textarea id="w3review" name="comments" rows="4" cols="50"></textarea>
+                        <br>
+                        <div class="text=center">
+                            <input type="submit" value="Enviar">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+{% endblock %}

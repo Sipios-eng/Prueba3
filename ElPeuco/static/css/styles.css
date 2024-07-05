@@ -1,0 +1,245 @@
+/*se agrego como componente botones para el navbar */
+.navbar-custom {
+    background-color: rgba(0, 0, 0, 0.932); 
+}
+.botonesmargen{
+    padding-bottom: 10px;
+}
+.navbar-custom .btn-secondary {
+    background-color: #343a40; 
+    border-color: #343a40; /
+}
+.botoneslocos{
+    margin-top: 20px;
+}
+
+.navbar-custom .btn-secondary:hover {
+    background-color: #23272b; 
+    border-color: #1d2124; 
+}
+
+/*DEFINIMOS EL TAMANO DE LAS IMAGENES*/
+.carrusel{
+    width: 100%;
+    height: 887px;
+}
+/* CAMBIAMOS LA DECORACION Y EL COLOR DEL LINK AL PONER EL CURSOR ENCIMA*/
+a:hover{
+    text-decoration: none;
+    color: aqua;
+}
+/* CAMBIA LA ESTETICA DE EL LINK EN GENERAL*/
+a{
+    text-decoration: none;
+    color: white
+}
+/* CAMBIA EL COLOR DEL FONDO DE LA PAGINA*/
+.fondoprincipal{
+    background-color: #C6B583;
+}
+.ordenarformulario{
+    margin-top: 4%;
+    margin-left: 8%;
+    margin-right: 8%;
+
+}
+.fondoformulario {
+    background-color: #D0CDB3;
+    padding: 2%; /* Reducido para menos espacio interior */
+    border-radius: 15px; /* Esquinas redondeadas */
+    max-width: 800px; /* Ancho máximo para controlar el tamaño */
+    margin: 2% auto; /* Centrar el formulario horizontalmente */
+}
+
+
+.input_container input[type="submit"] {
+    border-radius: 10px; /* Esquinas redondeadas para el botón también */
+}
+
+.ordenarformularios{
+   padding-top: 7%;
+   padding-left: 13%;
+   padding-right: 13%;
+   padding-bottom: 15%;
+
+}
+
+.fondocartas{
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+}
+.fondocartass{
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+}
+h1{
+    font-size: 300%;
+}
+
+.fondorestaurant{
+    padding-top: 7%;
+   padding-left: 13%;
+   padding-right: 13%;
+   padding-bottom: 15%;
+}
+
+h2{
+    font-size: 300%;
+}
+
+.imagenrestaurant{
+    padding-top: 4%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 15%;
+ 
+ }
+
+ .ordenarimagenrestaurant{
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 1%;
+
+}
+.imagechica{
+    width: 40%;
+    height: 40%;
+}
+.separador{
+    margin-top: 2%;
+}
+/* DEFINE TAMANO DE LA CARTAS*/
+.cartas{
+    width: 100%;
+    height: 300px;
+}
+/* DEFINE EL TAMANO DE LAS IMAGENES EN EL CARRITO DE COMPRAS*/
+.carrito{
+    width: 250px;
+    height: 200px;
+}
+.input_container{
+    width: 600px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    border: 10px solid #41b9ff;
+
+}
+.input_container .input-row{
+    margin-bottom: 12px;
+}
+
+.input_container input:not([type="submit"]),
+.input_container textarea{
+    width: 100%;
+    margin: 0 0 3px;
+    background-color: #d6d6d6;
+    color: #000;
+    padding: 10px 15px;
+    height: 50px;
+    line-height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    outline: 0;
+    transition: all 0.5s ease-out;
+}
+.input_container textarea{
+    height: 100px;
+    resize: none;
+
+}
+
+.input_container input:not([type="submit"]):focus,
+.input_container textarea:focus{
+    border-color: #2793d2;
+
+}
+
+.input_container input[type="submit"]{
+    padding: 10px 30px;
+    font-size: 18px;
+    line-height: 30px;
+    height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #2793d2;
+    color: #fff;
+    border: 0;
+    transition: all 0.5s ease-out;
+    border-radius: 5px;
+}
+.input_container input[type="submit"]:hover{
+    background-color: #000;
+}
+
+em.error{
+    font-weight: 700;
+    display: block;
+    color: #f00;
+    font-size: 14px;
+}
+
+div input[type="submit"]{
+    padding: 10px 30px;
+    font-size: 18px;
+    line-height: 30px;
+    height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #2793d2;
+    color: #fff;
+    border: 0;
+    transition: all 0.5s ease-out;
+    border-radius: 5px;
+}
+
+#map {
+	height: 650px;
+	width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+.fondomapa{
+    padding-top: 0.5%;
+    padding-bottom: 2.7%;
+    background-color: #C6B583;
+}
+.ordenmapa{
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.textoorden{
+    margin-left: 34% ;
+    text-decoration: none;
+    color: black;
+}
+.fondoferiado{
+    background-color: #000;
+}
+.ayuda{
+    margin-left: 300px;
+}
+.btn-header {
+    background-color: var(--clr-gray);
+    padding: .5rem;
+    border-radius: 100vmax;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .25);
+    transition: .2s;
+}
+
+.btn-header:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .25);
+}

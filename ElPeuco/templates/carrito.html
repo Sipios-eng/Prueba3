@@ -1,0 +1,56 @@
+
+{% extends "base.html" %}
+{%load static%}
+
+{% block cabeceratitulo %}
+
+<title>Bienvenidos a El Peuco!</title>
+{% endblock %}
+{% block contenido %}
+        
+
+        <!---Cambiar este nav-->
+        <div class="container">
+          <div class="row" >
+            <div class="col-lg-9">
+              <h1>MENU</h1>
+              <table class="table">
+                <tbody id="Producto">
+                           
+                </tbody>
+              </table>
+            </div>
+            <div class="col-lg-3">
+              <table class="table"> <!---el id es el que da los productos-->    
+                <thead>
+                  <tr><td>
+              <h1>BOLETA</h1>
+              <h5>Total</h5>
+              <h2>29.900</h2>
+            <td></tr>
+                </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="m-t-sm">
+                      <div class="btn-group">
+                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> Comprar</a>
+                        <a href="#" class="btn btn-white btn-sm"> Cancelar</a>
+                      </div>
+                  </td>
+                </div>
+                </tr>
+                <tr>
+                <td>
+                  <h4>Contactanos</h4>
+                  <h3><i class="fa fa-phone"></i> +56 9 7569 9179</h3>
+                </td>
+                </tr>
+              </tbody>
+              
+          </table>
+              
+            </div>
+          </div>
+        </div>
+{% endblock %}
