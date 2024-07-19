@@ -1,21 +1,29 @@
 /*se agrego como componente botones para el navbar */
 .navbar-custom {
-    background-color: rgba(0, 0, 0, 0.932); 
+    background-color: #9b2948; 
 }
 .botonesmargen{
     padding-bottom: 10px;
 }
-.navbar-custom .btn-secondary {
-    background-color: #343a40; 
-    border-color: #343a40; /
+.btn-secondary {
+    background-color: #ff7251; 
+    border-color: #ff5934;
+}
+.btn-danger {
+    background-color: #ff471e; 
+    border-color: #fc3d12;
 }
 .botoneslocos{
     margin-top: 20px;
 }
 
-.navbar-custom .btn-secondary:hover {
-    background-color: #23272b; 
-    border-color: #1d2124; 
+.btn-secondary:hover {
+    background-color: #ff8164; 
+    border-color: #ffd9a1; 
+}
+.btn-secondary:hover .btn-danger::after {
+    background-color: #eb3d16; 
+    border-color: #d32903; 
 }
 
 /*DEFINIMOS EL TAMANO DE LAS IMAGENES*/
@@ -35,7 +43,7 @@ a{
 }
 /* CAMBIA EL COLOR DEL FONDO DE LA PAGINA*/
 .fondoprincipal{
-    background-color: #C6B583;
+    background-color: #ffcd74;
 }
 .ordenarformulario{
     margin-top: 4%;

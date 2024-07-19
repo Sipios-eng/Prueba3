@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+{%load static%}
+
+{% block cabeceratitulo %}
+<title>Registro</title>
+{% endblock %}
+{% block contenido %}
+<div class="container mt-4" id="caja_registro">
+    <div id="content_form" class="d-flex flex-column justify-content-center align-items-center p-3 border rounded">
+        <h1 class="mb-4">REGISTRO</h1>
+        <form class="form" id="formulario" action="{% url 'registro' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="button-reg" type="submit" id="submitBtn">Registrarse</button>
+        </form>
+    </div>
+</div>
+<script src="{% static 'js/registro.js' %}"></script>
+{% endblock %}
