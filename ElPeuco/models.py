@@ -60,8 +60,22 @@ class producto(models.Model):
     nombre_producto = models.CharField(max_length=30)
     precio = models.IntegerField()
     foto = models.ImageField(upload_to='images/')
-    
+
     def __str__(self):
         return self.id_producto
+
+class Carrito(models.Model):
+    user = models.OneToOneField(usuarioRegistrado, on_delete=models.CASCADE)
+    created_el = models.DateTimeField(auto_now_add=True)
+
+class CarritoItem(models.Model):
+    carrito = models.ForeignKey(Carrito, on_delete=models.CASCADE)
+    producto = models.ForeignKey(producto, on_delete=models.CASCADE)
+    cantidad = models.PositiveIntegerField(default=1)
     
-    
+class Apedido(models.Model):
+    id_pedido = models.AutoField(primary_key=True)
+    Correo_pedido = models.EmailField()
+    Titulo_Pedido = models.CharField(max_length=60)
+    descripcion_pedido =  models.TextField()
+    Imagen_Adjunta = models.ImageField(upload_to='images/')

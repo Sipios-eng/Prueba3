@@ -42,13 +42,19 @@ class FormularioInicioSesion(AuthenticationForm):
         self.fields['username'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Correo'})
         self.fields['password'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Contraseña'})
 
-class UserProfileForm(forms.ModelForm):
-    class Meta:
-        model = UserProfile
-        fields = ['run', 'birth_date', 'phone', 'address', 'postal_code', 'document_number']
 
 class UserForm(forms.ModelForm):
     class Meta:
         model = usuarioRegistrado
         fields = ['first_name', 'last_name', 'email']
 
+
+class ContactoForms(forms.ModelForm):
+    class Meta:
+        model = Apedido
+        fields = ['Correo_pedido', 'Titulo_Pedido', 'descripcion_pedido', 'Imagen_Adjunta']
+        widgets ={
+            'Correo_pedido': forms.EmailInput(attrs={'class': 'form-control'}),
+            'Titulo_Pedido':forms.TextInput(attrs={'class': 'form-control'}), 
+            'descripcion_pedido':forms.Textarea(attrs={'class': 'form-control'}),
+        }

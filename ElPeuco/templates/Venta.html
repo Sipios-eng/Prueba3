@@ -1,0 +1,44 @@
+
+{% extends "base.html" %}
+{%load static%}
+
+{% block cabeceratitulo %}
+
+<title>Bienvenidos a El Peuco!</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/habitaciones.css' %}">
+{% endblock %}
+{% block contenido %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Productos</h2>
+    <div class="row">
+        {% for producto in productos %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="{{ producto.foto.url }}" class="card-img-top" alt="{{ habitacion.descripcion_habitacion }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ producto.nombre_producto }}</h5>
+                    <p class="card-text">{{ producto.descripcion_producto }}</p>
+                    <ul class="list-unstyled">
+                        <li>{{ producto.precio }}</li>
+                    </ul>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'agregar_al_carrito' producto.id_producto %}" class="btn btn-success">Agregar al carro</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+<!--{% url 'reserva' %}/{{habitacion.id_habitacion}}-->

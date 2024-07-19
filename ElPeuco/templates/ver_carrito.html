@@ -1,0 +1,47 @@
+
+{% extends "base.html" %}
+{% load custom_filters %}
+{%load static%}
+
+{% block cabeceratitulo %}
+
+<title>Bienvenidos a El Peuco!</title>
+{% endblock %}
+{% block contenido %}
+{% load custom_filters %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Carrito de Compras</h2>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td><img src="{{ item.producto.foto.url }}" class="img-fluid" alt="{{ item.producto.nombre_producto }}" style="max-width: 100px; max-height: 100px;"></td>
+                    <td>{{ item.producto.nombre_producto }}</td>
+                    <td>{{ item.cantidad }}</td>
+                    <td>{{ item.producto.precio }}</td>
+                    <td>{{ item.producto.precio|multiply:item.cantidad }}</td>
+                    <td>
+                        <a href="{% url 'eliminar_del_carrito' item.id %}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-right">
+            <h4>Total a Pagar: {{ total }}</h4>
+        </div>
+    </div>
+    <a href="{% url 'Venta' %}" class="btn btn-primary">Continuar Comprando</a>
+</div>
+{% endblock %}

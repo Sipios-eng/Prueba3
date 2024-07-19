@@ -1,8 +1,9 @@
 #views.py
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
-from.forms import FormularioRegistrousuarioRegistrado, ProductoForm
-from .models import producto
+from .forms import FormularioRegistrousuarioRegistrado, ProductoForm, ContactoForms
+from .models import producto, Carrito, CarritoItem, Apedido
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -72,10 +73,41 @@ def cerrar_sesion(request):
     logout(request)
     return redirect('index')
 
+def venta(request):
+    productos = producto.objects.all()
+    return render(request,'Venta.html',{'productos':productos})
+
+@login_required
+def agregar_al_carrito(request, id_producto):
+    producto_obj = get_object_or_404(producto, id_producto=id_producto)
+    carrito, created = Carrito.objects.get_or_create(user=request.user)
+    carrito_item, created = CarritoItem.objects.get_or_create(carrito=carrito, producto=producto_obj)
+    if not created:
+        carrito_item.cantidad += 1
+        carrito_item.save()
+    return redirect('ver_carrito')
+
+@login_required
+def eliminar_del_carrito(request, id_item):
+    carrito_item = get_object_or_404(CarritoItem, id=id_item, carrito__user=request.user)
+    carrito_item.delete()
+    return redirect('ver_carrito')
+
+@login_required
+def ver_carrito(request):
+    carrito, created = Carrito.objects.get_or_create(user=request.user)
+    items = CarritoItem.objects.filter(carrito=carrito)
+    total = sum(item.producto.precio * item.cantidad for item in items)
+    print(total)
+    return render(request, 'ver_carrito.html', {'items': items, 'total': total})
 
 
-
-
-
-
-
+def Contacto(request):
+    if request.method == 'POST':
+        form = ContactoForms(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return render(request, 'Contacto.html', {'form': form, 'success': True})
+    else:
+        form = ContactoForms()
+    return render(request, 'Contacto.html', {'form': form, 'success': False})

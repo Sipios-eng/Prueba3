@@ -1,0 +1,51 @@
+
+/* Estilos para la tarjeta */
+.card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px; /* Añade un margen alrededor de las tarjetas */
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Agranda la tarjeta al pasar el mouse */
+}
+
+.card-img-top {
+    height: 250px; /* Altura de la imagen */
+    object-fit: cover;
+}
+
+.card-body {
+    height: 250px; /* Altura del cuerpo de la tarjeta */
+}
+
+.card-title {
+    font-size: 1.2rem; /* Tamaño del título */
+}
+
+.card-text {
+    font-size: 1rem; /* Tamaño del texto */
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+.card ul li {
+    list-style: disc;
+    color: #333;
+}
+h2 {
+    font-family: 'Arial Black', sans-serif; /* Fuente llamativa */
+    font-size: 36px; /* Tamaño de la fuente */
+    font-weight: bold; /* Peso de la fuente */
+    color: #333; /* Color del texto */
+    text-transform: uppercase; /* Convertir el texto a mayúsculas */
+    background-color: #f8f9fa; /* Color de fondo */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
