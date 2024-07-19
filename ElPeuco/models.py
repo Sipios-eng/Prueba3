@@ -40,7 +40,7 @@ class usuarioRegistrado(AbstractBaseUser, PermissionsMixin):
     objects = AdministradorusuarioRegistrado()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'rut', 'phone', 'birth_date', 'address', 'postal_code']
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'phone', 'birth_date', 'address', 'postal_code']
 
     def __str__(self):
         return self.email
@@ -53,3 +53,15 @@ class UserProfile(models.Model):
     address = models.CharField(max_length=255)
     postal_code = models.CharField(max_length=10)
     document_number = models.CharField(max_length=20)
+
+class producto(models.Model):
+    id_producto = models.AutoField(primary_key=True)
+    descripcion_producto = models.CharField(max_length=60)
+    nombre_producto = models.CharField(max_length=30)
+    precio = models.IntegerField()
+    foto = models.ImageField(upload_to='images/')
+    
+    def __str__(self):
+        return self.id_producto
+    
+    

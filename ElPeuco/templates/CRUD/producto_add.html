@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{%load static%}
+
+{% block cabeceratitulo %}
+
+<title>Bienvenidos a El Peuco!</title>
+{% endblock %}
+{% block contenido %}
+<h2>Agregar Producto</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}

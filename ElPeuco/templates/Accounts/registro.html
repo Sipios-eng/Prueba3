@@ -7,11 +7,47 @@
 {% endblock %}
 {% block contenido %}
 <div class="container mt-4" id="caja_registro">
-    <div id="content_form" class="d-flex flex-column justify-content-center align-items-center p-3 border rounded">
+    <div id="content_form" class="d-flex flex-column justify-content-center align-items p-3 border rounded">
         <h1 class="mb-4">REGISTRO</h1>
         <form class="form" id="formulario" action="{% url 'registro' %}" method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form.non_field_errors }}
+        <div >
+            <label for="id_first_name">Nombre</label>
+            {{ form.first_name }}
+        </div>
+        <div >
+            <label for="id_last_name">Apellido</label>
+            {{ form.last_name }}
+        </div>
+            <div >
+                <label for="id_phone">Numero de contacto</label>
+                {{ form.phone }}
+            </div>
+            <div >
+                <label for="id_birth_date">Fecha de nacimiento</label>
+                {{ form.birth_date }}
+            </div>
+        <div >
+            <label for="id_address">Direccion</label>
+            {{ form.address }}
+        </div>
+            <div >
+                <label for="id_postal_code">Codigo postal</label>
+                {{ form.postal_code }}
+            </div>
+        <div >
+            <label for="id_email">Correo electronico</label>
+            {{ form.email }}
+        </div>
+        <div >
+            <label for="id_password1">Contraseña</label>
+            {{ form.password1 }}
+        </div>
+        <div >
+            <label for="id_password2">Confirma tu contraseña</label>
+            {{ form.password2 }}
+        </div>
             <button class="button-reg" type="submit" id="submitBtn">Registrarse</button>
         </form>
     </div>

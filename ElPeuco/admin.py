@@ -1,7 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import usuarioRegistrado
+from .models import usuarioRegistrado , producto
 from .forms import FormularioRegistrousuarioRegistrado
+
+
 
 class usuarioRegistradoAdmin(UserAdmin):
     add_form = FormularioRegistrousuarioRegistrado
@@ -23,3 +25,4 @@ class usuarioRegistradoAdmin(UserAdmin):
     ordering = ('email',)
 
 admin.site.register(usuarioRegistrado, usuarioRegistradoAdmin)
+admin.site.register(producto)

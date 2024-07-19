@@ -10,7 +10,7 @@
 <div id="login-container" class="container mt-4">
     <div id="content_form" class="d-flex flex-column justify-content-center align-items-center p-3 border rounded">
         <p class="title">Login</p>
-        <form class="form" method="post" action="{% url 'login' %}" id="formulario">
+        <form class="form row" method="post" action="{% url 'loginuser' %}" id="formulario">
             {% csrf_token %}
             <label for="username">Correo electronico</label>
             <div class="input-group">
